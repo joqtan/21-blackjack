@@ -18,21 +18,25 @@
         <div class="row mt-2">
             <div id="buttons" class="col text-center">
                 <button id="btn-new" class="btn btn-danger">New game</button>
-                <button id="btn-take" class="btn btn-primary">Hit card</button>
-                <button id="btn-stop" class="btn btn-primary">Stand</button>
+                <button id="btn-take" disabled class="btn btn-primary">
+                    Hit card
+                </button>
+                <button id="btn-stop" disabled class="btn btn-primary">
+                    Stand
+                </button>
             </div>
         </div>
 
         <div class="row container">
             <div class="col">
                 <h1>Player - <small>0</small></h1>
-                <div id="player-cards"></div>
+                <div id="player-cards" class="divCards"></div>
             </div>
         </div>
         <div class="row container">
             <div class="col">
                 <h1>Computer - <small>0</small></h1>
-                <div id="computer-cards"></div>
+                <div id="computer-cards" class="divCards"></div>
             </div>
         </div>
         <script src="assets/js/underscore-min.js"></script>
