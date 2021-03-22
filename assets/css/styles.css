@@ -2,13 +2,13 @@ html,
 body {
     margin: 0px;
     background-color: #2f4f30;
-    color: white;
+    color: #fff;
 }
 
 .tittle {
     text-align: center;
-    background-color: black;
-    color: white;
+    background-color: #000;
+    color: #ffff;
     padding: 20px;
     font-size: 25px;
 }

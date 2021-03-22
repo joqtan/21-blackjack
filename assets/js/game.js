@@ -14,9 +14,11 @@ let playerPoints = 0,
 /*html references */
 const btnTake = document.querySelector('#btn-take')
 const btnstop = document.querySelector('#btn-stop')
+const btnNew = document.querySelector('#btn-new')
 const divPlayerCards = document.querySelector('#player-cards')
 const divComputerCards = document.querySelector('#computer-cards')
 const poinstSmall = document.querySelectorAll('small')
+const message = ''
 
 const createDeck = () => {
     for (let i = 2; i <= 10; i++) {
@@ -65,6 +67,22 @@ const computerTurn = (minPoints) => {
             break
         }
     } while (computerPoints < minPoints && minPoints <= 21)
+
+    setTimeout(() => {
+        if (minPoints === 21) {
+            alert(`it's a draw`)
+        } else if (computerPoints === playerPoints) {
+            alert(`it's a draw`)
+        } else if (minPoints > 21) {
+            alert(`pc wins`)
+        } else if (computerPoints > 21) {
+            alert('you win')
+        } else if (playerPoints > computerPoints) {
+            alert('you win')
+        } else {
+            alert('pc wins')
+        }
+    }, 30)
 }
 /*
 events
@@ -95,4 +113,17 @@ btnstop.addEventListener('click', () => {
     btnTake.disabled = true
     btnstop.disabled = true
     computerTurn(playerPoints)
+})
+
+btnNew.addEventListener('click', () => {
+    deck = []
+    createDeck()
+    playerPoints = 0
+    computerPoints = 0
+    poinstSmall[0].innerText = 0
+    poinstSmall[1].innerText = 0
+    divComputerCards.innerHTML = ''
+    divPlayerCards.innerHTML = ''
+    btnTake.disabled = false
+    btnstop.disabled = false
 })
